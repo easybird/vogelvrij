@@ -1,0 +1,31 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-top: 35%;
+  margin-bottom: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+/* landscape tablets and bigger */
+@media (min-width:901px) {
+  .content {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+.page {
+  font-size: 250%;
+  line-height: 1.5;
+  font-weight: 400;
+  display: block;
+}
+
+.quotedBy {
+  padding-top: 45px;
+  font-size: 100%;
+  font-weight: 400;
+  display: block;
+}

@@ -37,6 +37,11 @@
   list-style: none;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 /* landscape tablets and bigger */
 @media (min-width:901px) {
   .logo {
@@ -56,7 +61,7 @@
     margin: auto;
   }
 
-ul {
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -64,9 +69,9 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
+  }
 
-li {
+  li {
     flex: 1;
-}
+  }
 }

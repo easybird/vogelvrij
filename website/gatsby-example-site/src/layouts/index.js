@@ -1,15 +1,12 @@
 import React from 'react';
 import Head from '../components/Head';
 import Header from '../components/Header';
-import './index.css';
-import './custom-index.css';
 import HomePageLayout from './HomePageLayout';
 
 const TemplateWrapper = ({ location: { pathname }, children, data }) => {
   switch (pathname) {
     case '/':
-    // TODO check why props cannot be passed here?
-      return <HomePageLayout ietsAnders="test" />{children}</HomePageLayout>;
+      return <HomePageLayout />{children}</HomePageLayout>;
     case '/collectie':
       return (
         <div
@@ -21,7 +18,6 @@ const TemplateWrapper = ({ location: { pathname }, children, data }) => {
           }}
         >
           <Head />
-          // TODO and here!?
           <Header />
           {children()}
         </div>

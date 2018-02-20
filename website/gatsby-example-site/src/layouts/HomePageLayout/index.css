@@ -1,0 +1,23 @@
+.homepage {
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+// TODO move to base index.css
+.base-layout {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+}
+
+.background-image {
+  position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

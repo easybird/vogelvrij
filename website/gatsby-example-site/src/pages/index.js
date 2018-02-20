@@ -1,15 +1,7 @@
 import React from 'react';
 
 const IndexPage = ({ data: { allContentfulPage: { edges } } }) => (
-  <div
-    style={{
-      width: '100%',
-      height: '100%',
-      background: `url(${edges[0].node.hero.resolutions.src}) no-repeat center center fixed`,
-    }}
-  >
-    {edges.map(({ node: { intro: { intro } } }) => <p>{intro}</p>)}
-  </div>
+  <div>{edges.map(({ node: { intro: { intro } } }) => <p>{intro}</p>)}</div>
 );
 
 export default IndexPage;

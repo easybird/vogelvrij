@@ -2,6 +2,7 @@
     justify-content: space-around;
     align-content: center;
     display: flex;
+    padding-top: 20px;
 }
 
 .logo {
@@ -14,6 +15,7 @@
     align-content: center;
     align-items: center;
     margin-right: 5em;
+    margin-left: 1em;
 }
 
 @media (max-width: 640px - 1px) {
@@ -46,6 +48,7 @@ a {
 @media (min-width:901px) {
   .logo {
     flex: 1;
+    margin-left: 0;
   }
 
   .header {

@@ -1,7 +1,21 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
 
- // You can delete this file if you're not using it
+const LAYOUT_PAGES = {
+  HOME: 'home',
+};
+
+exports.onCreatePage = async ({ page, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  return new Promise(resolve => {
+    switch (page.path) {
+      case '/':
+        createPage({ ...page, layout: LAYOUT_PAGES.HOME });
+        break;
+      default:
+        break;
+    }
+    resolve();
+  });
+};

@@ -1,7 +1,13 @@
 import React from 'react';
+import './home.css';
 
 const IndexPage = ({ data: { allContentfulPage: { edges } } }) => (
-  <div>{edges.map(({ node: { intro: { intro } } }) => <p>{intro}</p>)}</div>
+  <content className="content">
+    {edges.map(({ node: { intro: { intro }, description: { description } } }) => [
+      <div className="page">{intro}</div>,
+      <div className="quotedBy">{description}</div>,
+    ])}
+  </content>
 );
 
 export default IndexPage;

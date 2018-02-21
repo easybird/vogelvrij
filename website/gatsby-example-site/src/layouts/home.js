@@ -1,11 +1,11 @@
 import React from 'react';
-import Head from '../../components/Head';
-import Header from '../../components/Header';
-import '../index.css';
-import '../custom-index.css';
-import './index.css';
-import { Photo } from '../../components/PhotoGallery';
-// .find(({ node: { url } }) => url === 'home').node.hero.resolutions.src
+import Head from '../components/Head';
+import Header from '../components/Header';
+import { Photo } from '../components/PhotoGallery';
+import './css/index.css';
+import './css/custom-index.css';
+import './css/home.css';
+
 const HomePageLayout = ({ children, data: { allContentfulPage: { edges } } }) => (
   <div className="homepage base-layout">
     <Head />

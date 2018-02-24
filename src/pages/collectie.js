@@ -2,12 +2,9 @@ import React from 'react';
 import PhotoGallery, { Photo } from '../components/PhotoGallery';
 
 const Collectie = ({ data: { allContentfulImage: { edges } } }) => (
-  <div>
-    <p>Een overzicht van onze collectie</p>
-    <PhotoGallery>
-      {edges.map(({ node: { title, photo: { sizes } } }) => <Photo title={title} sizes={sizes} />)}
-    </PhotoGallery>
-  </div>
+  <PhotoGallery>
+    {edges.map(({ node: { title, photo: { sizes } } }) => <Photo title={title} sizes={sizes} />)}
+  </PhotoGallery>
 );
 
 export default Collectie;

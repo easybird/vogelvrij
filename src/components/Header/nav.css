@@ -149,4 +149,14 @@ a:hover {
   {
     display: none;
   }
+
+  #menu li {
+    font-size: 120%;
+  }
+}
+
+@media (min-width: 1050px) {
+  #menu li {
+    font-size: 150%;
+  }
 }

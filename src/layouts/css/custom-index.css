@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    /* font-family: 'Bungee Hairline', cursive; */
+/* mooi basic */
+font-family: 'Cutive Mono', monospace;
+/* stylish */
+/* font-family: 'Michroma', sans-serif; */
+/* superbasic */
+    /* font-family: "Aileron", monospace, serif; */
+    /* background: url(./rings.png) no-repeat center center fixed; */
+    padding: 0;
+}
+
+h1 {
+  font-size: 180%;
+}
+
+h2 {
+  font-size: 130%;
+}

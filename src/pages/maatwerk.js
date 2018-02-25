@@ -7,8 +7,22 @@ const Maatwerk = ({ data: { allContentfulPage: { edges } } }) => (
     {edges.map(({ node: { intro, description, hero } }) => [
       hero && <Photo title={hero.title} sizes={hero.sizes} />,
       <div>
-        {intro && <div className="page">{intro.intro}</div>},
-        {description && <div className="quotedBy">{description.description}</div>}
+        {intro && (
+          <div
+            className="page"
+            dangerouslySetInnerHTML={{
+              __html: intro.childMarkdownRemark && intro.childMarkdownRemark.html,
+            }}
+          />
+        )}
+        {description && (
+          <div
+            className="quotedBy"
+            dangerouslySetInnerHTML={{
+              __html: description.childMarkdownRemark && description.childMarkdownRemark.html,
+            }}
+          />
+        )}
       </div>,
     ])}
   </div>
@@ -27,7 +41,9 @@ export const query = graphql`
             intro
           }
           description {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
           hero {
             title

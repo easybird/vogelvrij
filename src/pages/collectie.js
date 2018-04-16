@@ -3,7 +3,9 @@ import PhotoGallery, { Photo } from '../components/PhotoGallery';
 
 const Collectie = ({ data: { allContentfulImage: { edges } } }) => (
   <PhotoGallery>
-    {edges.map(({ node: { title, photo: { sizes } } }) => <Photo title={title} sizes={sizes} />)}
+    {edges.map(({ node: { title, photo: { sizes, resolutions } } }) => (
+      <Photo title={title} sizes={sizes} resolutions={resolutions} />
+    ))}
   </PhotoGallery>
 );
 
@@ -20,7 +22,7 @@ export const query = graphql`
             sizes(maxWidth: 600) {
               ...GatsbyContentfulSizes_withWebp
             }
-            resolutions {
+            resolutions(width: 1000) {
               base64
               aspectRatio
               width

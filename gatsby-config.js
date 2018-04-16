@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-transformer-remark',
+    'gatsby-plugin-react-next',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import galleryStyle from './gallery.css';
 import Img from 'gatsby-image';
+import ZMage from 'react-zmage';
 
 const PhotoGallery = ({ children }) => <section className="gallerySection">{children}</section>;
 
-export const Photo = ({ style, title, sizes, className }) => (
-  <Img style={style} key={title} outerWrapperClassName="gallery" className={className || 'image'} sizes={sizes} />
+export const Photo = ({ style, title, sizes, resolutions, className }) => (
+  <div className="photo-zoom">
+    <Img style={style} key={title} outerWrapperClassName="gallery" className={className || 'image'} sizes={sizes} />
+    {resolutions && <ZMage style={{ opacity: 0, position: 'absolute', top: 0, left: 0 }} src={resolutions.src} />}
+  </div>
 );
 
 export default PhotoGallery;

@@ -6,7 +6,11 @@ import { Photo } from '../components/PhotoGallery';
 const Contact = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
     {edges.map(({ node: { intro, description, hero } }) => [
-      hero && <Photo title={hero.title} sizes={hero.sizes} className='contact-image' />,
+      hero && (
+        <div>
+          <Photo title={hero.title} sizes={hero.sizes} className="contact-image" />
+        </div>
+      ),
       <div>
         {intro && (
           <div

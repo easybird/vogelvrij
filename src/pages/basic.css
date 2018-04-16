@@ -2,16 +2,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-left: 3%;
-  padding-right: 3%;
+  max-width: 1000px;
 }
 
 /* landscape tablets and bigger */
 @media (min-width:862px) {
   .basic-container {
     flex-direction: row;
-    padding-left: 7%;
-    padding-right: 7%;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: space-between;
   }
 }
 
@@ -20,13 +20,5 @@
   line-height: 1.5;
   font-weight: 400;
   padding-bottom: 1em;
-  display: block;
-}
-
-.quotedBy {
-  padding-top: 35px;
-  max-width: 900px;
-  font-size: 100%;
-  font-weight: 400;
   display: block;
 }

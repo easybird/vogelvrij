@@ -7,7 +7,6 @@
 
 .gallery {
   min-width: 0;
-  margin: 10px;
 }
 
 .image {
@@ -15,6 +14,18 @@
   max-width: 100%;
   max-height: 300px;
 }
+
+.photo-zoom {
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+  .photo-zoom:hover {
+    cursor: zoom-in;
+    opacity: 0.85;
+  }
 
 @media (max-width:650px) {
   .image {
@@ -26,7 +37,7 @@
 /* landscape tablets and bigger */
 @media (min-width:862px) {
   .gallerySection {
-    padding-left: 5%;
-    padding-right: 5%;
+    max-width: 1000px;
+    margin: auto;
   }
 }

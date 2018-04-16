@@ -23,7 +23,11 @@ const Over = ({ data: { allContentfulPage: { edges } } }) => (
           />
         )}
       </div>,
-      hero && <Photo title={hero.title} sizes={hero.sizes} className='contact-image' />,
+      hero && (
+        <div>
+          <Photo title={hero.title} sizes={hero.sizes} className="contact-image" />
+        </div>
+      ),
     ])}
   </div>
 );

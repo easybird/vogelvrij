@@ -4,8 +4,7 @@ import { Photo } from '../components/PhotoGallery';
 
 const Maatwerk = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
-    {edges.map(({ node: { intro, description, hero } }) => [
-      hero && <Photo title={hero.title} sizes={hero.sizes} />,
+    {edges.map(({ node: { intro, description, hero } }) => (
       <div>
         {intro && (
           <div
@@ -23,8 +22,8 @@ const Maatwerk = ({ data: { allContentfulPage: { edges } } }) => (
             }}
           />
         )}
-      </div>,
-    ])}
+      </div>
+    ))}
   </div>
 );
 

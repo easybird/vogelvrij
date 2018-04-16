@@ -5,7 +5,6 @@ import { Photo } from '../components/PhotoGallery';
 const Over = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
     {edges.map(({ node: { intro, description, hero } }) => [
-      hero && <Photo title={hero.title} sizes={hero.sizes} />,
       <div>
         {intro && (
           <div
@@ -24,6 +23,7 @@ const Over = ({ data: { allContentfulPage: { edges } } }) => (
           />
         )}
       </div>,
+      hero && <Photo title={hero.title} sizes={hero.sizes} className='contact-image' />,
     ])}
   </div>
 );
@@ -47,7 +47,7 @@ export const query = graphql`
           }
           hero {
             title
-            sizes(maxWidth: 300) {
+            sizes(maxWidth: 500) {
               ...GatsbyContentfulSizes_withWebp
             }
             resolutions {

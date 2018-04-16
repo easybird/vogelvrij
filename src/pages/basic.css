@@ -25,6 +25,7 @@
 
 .quotedBy {
   padding-top: 35px;
+  max-width: 900px;
   font-size: 100%;
   font-weight: 400;
   display: block;

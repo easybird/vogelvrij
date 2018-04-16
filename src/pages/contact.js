@@ -1,11 +1,12 @@
 import React from 'react';
 import './basic.css';
+import './contact.css';
 import { Photo } from '../components/PhotoGallery';
 
 const Contact = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
     {edges.map(({ node: { intro, description, hero } }) => [
-      hero && <Photo title={hero.title} sizes={hero.sizes} />,
+      hero && <Photo title={hero.title} sizes={hero.sizes} className='contact-image' />,
       <div>
         {intro && (
           <div
@@ -47,7 +48,7 @@ export const query = graphql`
           }
           hero {
             title
-            sizes(maxWidth: 300) {
+            sizes(maxWidth: 500) {
               ...GatsbyContentfulSizes_withWebp
             }
             resolutions {

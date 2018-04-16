@@ -22,3 +22,11 @@
     max-height: 150px;
   }
 }
+
+/* landscape tablets and bigger */
+@media (min-width:862px) {
+  .gallerySection {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}

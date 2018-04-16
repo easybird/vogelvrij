@@ -17,7 +17,7 @@ export const query = graphql`
           id
           title
           photo {
-            sizes(maxWidth: 300) {
+            sizes(maxWidth: 600) {
               ...GatsbyContentfulSizes_withWebp
             }
             resolutions {

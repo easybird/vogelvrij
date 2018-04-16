@@ -17,7 +17,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-helmet`,
     'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-google-analytics`,

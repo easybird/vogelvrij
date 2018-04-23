@@ -3,9 +3,19 @@ import './home.css';
 
 const IndexPage = ({ data: { allContentfulPage: { edges } } }) => (
   <content className="content">
-    {edges.map(({ node: { intro: { intro }, description: { description } } }) => [
-      <div className="page">{intro}</div>,
-      <div className="quotedBy">{description}</div>,
+    {edges.map(({ node: { intro, description } }) => [
+      intro ? <div 
+      className="page"
+      dangerouslySetInnerHTML={{
+        __html: intro.childMarkdownRemark && intro.childMarkdownRemark.html,
+      }}
+      /> : <div/>,
+      description ? <div 
+      className="quotedBy"
+      dangerouslySetInnerHTML={{
+        __html: description.childMarkdownRemark && description.childMarkdownRemark.html,
+      }}
+      /> : <div/>,
     ])}
   </content>
 );
@@ -20,10 +30,14 @@ export const query = graphql`
           id
           url
           intro {
-            intro
+            childMarkdownRemark {
+              html
+            }
           }
           description {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
           hero {
             title

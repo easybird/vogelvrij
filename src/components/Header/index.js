@@ -7,9 +7,9 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <div className="logo">
+        <Link className="logo" to="/">
           <h1 className="logo-text">VogelVrij</h1>
-        </div>
+        </Link>
         <div className="menu-div" role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />
@@ -17,9 +17,6 @@ class Header extends Component {
             <span />
             <span />
             <ul id="menu">
-              <Link to="/">
-                <li>Home</li>
-              </Link>
               <Link to="/over">
                 <li>Over</li>
               </Link>

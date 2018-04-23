@@ -7,16 +7,17 @@ import './css/custom-index.css';
 import './css/home.css';
 
 const HomePageLayout = ({ children, data: { allContentfulPage: { edges } } }) => (
-  <div className="homepage base-layout">
+  <div>
+    <div className="homepage base-layout">
     <Head />
     <Header />
     {children()}
-    <div className="background-image">
+  </div>
+    <div className="background-image-wrapper">
       <Photo
-        style={{
-          opacity: 0.4,
-        }}
+        overlay={true}
         title="backgroundImage"
+        className="background-image"
         sizes={edges[0].node.hero.sizes}
       />
     </div>

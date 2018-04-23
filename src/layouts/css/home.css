@@ -1,10 +1,11 @@
 .homepage {
     height: 100vh;
+    position: relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
+    z-index: 1;
 }
 
 // TODO move to base index.css
@@ -15,9 +16,60 @@
   padding-top: 0;
 }
 
-.background-image {
-  position: fixed;
+.background-image-wrapper {
+  /* position: fixed;
+  left: 0;
+  top: 0;
+  border-color: blueviolet;
+  border-style: solid;
+  transform: translate(-50%, -50%); */
+
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+    
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: -300px;
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1025px) { /* Specific to this particular image */
+  .background-image-wrapper {
+    margin-top: -100px;   /* 50% */
+  }
+}
+
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  .background-image-wrapper {
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 0;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
+.image-overlay {
+  background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(247, 244, 244, 0.95), 
+      rgba(243, 228, 228, 0.05)
+    );
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.background-image {
+  /* left: 0; */
+  
 }

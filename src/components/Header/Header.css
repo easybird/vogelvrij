@@ -18,6 +18,12 @@
     margin-left: 1em;
     padding: 15px;
     margin: 15px;
+    transition: all 0.5s ease-in-out,
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  text-decoration: none;
 }
 
 .logo-text {
@@ -38,8 +44,8 @@
 }
 
 .menu-div {
-  margin-left: 7%;
-  margin-right: 7%;
+  margin: 15px;
+  padding: 15px;
   flex: 1;
 }
 
@@ -60,7 +66,7 @@ a {
   }
 
   .header {
-    padding: 50px 5px 5px; // header moest meer naar beneden
+    padding: 50px 5px 5px; /* header moest meer naar beneden */
     padding-left: 7%;
     padding-right: 7%;
   }

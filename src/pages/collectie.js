@@ -6,7 +6,7 @@ const Collectie = ({ data: { allContentfulImage: { edges } } }) => (
     {edges
     .filter(({ node: { order } }) => order)
     .map(({ node: { title, photo: { sizes, resolutions } } }) => (
-      <Photo title={title} sizes={sizes} resolutions={resolutions} />
+      <Photo zoom={true} title={title} sizes={sizes} resolutions={resolutions} />
     ))}
   </PhotoGallery>
 );

@@ -7,7 +7,7 @@ import './css/custom-index.css';
 import './css/home.css';
 
 const HomePageLayout = ({ children, data: { allContentfulPage: { edges } } }) => (
-  <div>
+  <div className="layout">
     <div className="homepage base-layout">
     <Head />
     <Header />

@@ -5,7 +5,7 @@ import './css/index.css';
 import './css/custom-index.css';
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <div className="layout">
     <Head />
     <Header />
     {children()}

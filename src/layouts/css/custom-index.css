@@ -9,6 +9,17 @@ font-family: 'Cutive Mono', monospace;
     /* font-family: "Aileron", monospace, serif; */
     /* background: url(./rings.png) no-repeat center center fixed; */
     padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.layout {
+  /* overflow-x: hidden; */
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 h1 {

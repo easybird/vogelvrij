@@ -4,6 +4,18 @@ import './Header.css';
 import './nav.css';
 
 class Header extends Component {
+  state  = {
+    checked: false
+  }
+  
+  componentWillMount() {
+    this.setState({checked: false})
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({checked: false})
+  }
+
   render() {
     return (
       <header className="header">
@@ -12,7 +24,8 @@ class Header extends Component {
         </Link>
         <div className="menu-div" role="navigation">
           <div id="menuToggle">
-            <input type="checkbox" />
+            {/* <input type="checkbox" checked/> */}
+            <input type="checkbox" checked={this.state.checked} onClick={() => this.setState({checked: !this.state.checked})}/>
             <span />
             <span />
             <span />

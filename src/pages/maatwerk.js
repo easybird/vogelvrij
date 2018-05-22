@@ -1,29 +1,30 @@
 import React from 'react';
 import './basic.css';
-import { Photo } from '../components/PhotoGallery';
+import {Photo} from '../components/PhotoGallery';
 
-const Maatwerk = ({ data: { allContentfulPage: { edges } } }) => (
+const Maatwerk = ({data: {allContentfulMaatwerk}}) => (
   <div className="basic-container">
-    {edges.map(({ node: { intro, description, hero } }) => (
-      <div>
-        {intro && (
-          <div
-            className="page"
-            dangerouslySetInnerHTML={{
-              __html: intro.childMarkdownRemark && intro.childMarkdownRemark.html,
-            }}
-          />
-        )}
-        {description && (
-          <div
-            className="quotedBy"
-            dangerouslySetInnerHTML={{
-              __html: description.childMarkdownRemark && description.childMarkdownRemark.html,
-            }}
-          />
-        )}
-      </div>
-    ))}
+    <div>
+      {allContentfulMaatwerk.edges.map (
+        ({node: {description, hero, url}}) => (
+          <div id={url} key={url}>
+            {description &&
+              <div
+                className="quotedBy"
+                dangerouslySetInnerHTML={{
+                  __html: description.childMarkdownRemark &&
+                    description.childMarkdownRemark.html,
+                }}
+              />}
+            {hero &&
+              <div>
+                <Photo title={hero.title} sizes={hero.sizes} resolutions={hero.resolutions} style={{width: "100%"}}/>
+              </div>}
+          </div>
+        )
+      )}
+
+    </div>
   </div>
 );
 
@@ -31,14 +32,11 @@ export default Maatwerk;
 
 export const query = graphql`
   query MaatwerkQuery {
-    allContentfulPage(filter: { url: { eq: "maatwerk" } }) {
+    allContentfulMaatwerk(sort: {fields: [order], order: DESC}) {
       edges {
         node {
           id
           url
-          intro {
-            intro
-          }
           description {
             childMarkdownRemark {
               html
@@ -46,7 +44,7 @@ export const query = graphql`
           }
           hero {
             title
-            sizes(maxWidth: 300) {
+            sizes(maxWidth: 1000) {
               ...GatsbyContentfulSizes_withWebp
             }
             resolutions {

@@ -1,21 +1,26 @@
 import React from 'react';
 import './home.css';
 
-const IndexPage = ({ data: { allContentfulPage: { edges } } }) => (
+const IndexPage = ({data: {allContentfulPage: {edges}}}) => (
   <content className="content">
-    {edges.map(({ node: { intro, description } }) => [
-      intro ? <div 
-      className="page"
-      dangerouslySetInnerHTML={{
-        __html: intro.childMarkdownRemark && intro.childMarkdownRemark.html,
-      }}
-      /> : <div/>,
-      description ? <div 
-      className="quotedBy"
-      dangerouslySetInnerHTML={{
-        __html: description.childMarkdownRemark && description.childMarkdownRemark.html,
-      }}
-      /> : <div/>,
+    {edges.map (({node: {intro, description}}) => [
+      intro &&
+        <div
+          key="intro"
+          className="page"
+          dangerouslySetInnerHTML={{
+            __html: intro.childMarkdownRemark && intro.childMarkdownRemark.html,
+          }}
+        />,
+      description &&
+        <div
+          key="description"
+          className="quotedBy"
+          dangerouslySetInnerHTML={{
+            __html: description.childMarkdownRemark &&
+              description.childMarkdownRemark.html,
+          }}
+        />,
     ])}
   </content>
 );

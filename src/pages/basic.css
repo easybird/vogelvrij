@@ -5,6 +5,10 @@
   max-width: 1000px;
 }
 
+.one-column {
+  flex-direction: column;
+}
+
 /* landscape tablets and bigger */
 @media (min-width:862px) {
   .basic-container {

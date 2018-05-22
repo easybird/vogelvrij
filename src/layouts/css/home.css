@@ -70,6 +70,6 @@
 }
 
 .background-image {
-  /* left: 0; */
-  
+  /* //for full height on some BIG screen resolutions */
+  min-height: 110vh;
 }

@@ -7,7 +7,7 @@ const IndexPage = ({data: {allContentfulPage: {edges}}}) => (
       intro &&
         <div
           key="intro"
-          className="page"
+          className="page limit-text-width"
           dangerouslySetInnerHTML={{
             __html: intro.childMarkdownRemark && intro.childMarkdownRemark.html,
           }}
@@ -15,7 +15,7 @@ const IndexPage = ({data: {allContentfulPage: {edges}}}) => (
       description &&
         <div
           key="description"
-          className="quotedBy"
+          className="quotedBy limit-text-width"
           dangerouslySetInnerHTML={{
             __html: description.childMarkdownRemark &&
               description.childMarkdownRemark.html,

@@ -64,7 +64,7 @@ a {
 }
 
 /* landscape tablets and bigger */
-@media (min-width:901px) {
+@media (min-width:1033px) {
   .logo {
     flex: 1;
     margin-left: 0;

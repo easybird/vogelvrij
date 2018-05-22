@@ -15,7 +15,8 @@ const HomePageLayout = ({ children, data: { allContentfulPage: { edges } } }) =>
   </div>
     <div className="background-image-wrapper">
       <Photo
-        overlay={true}
+        fullSize
+        overlay
         title="backgroundImage"
         className="background-image"
         sizes={edges[0].node.hero.sizes}

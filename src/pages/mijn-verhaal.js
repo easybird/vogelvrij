@@ -24,7 +24,7 @@ const MijnVerhaal = ({ data: { allContentfulPage: { edges } } }) => (
         )}
       </div>,
       hero && (
-        <div>
+        <div style={{alignSelf: 'center'}}>
           <Photo title={hero.title} sizes={hero.sizes} className="contact-image" />
         </div>
       ),

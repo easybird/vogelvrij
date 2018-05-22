@@ -1,31 +1,37 @@
 import Link from 'gatsby-link';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Header.css';
 import './nav.css';
 
 class Header extends Component {
-  state  = {
-    checked: false
-  }
-  
-  componentWillMount() {
-    this.setState({checked: false})
+  state = {
+    checked: false,
+  };
+
+  componentWillMount () {
+    this.setState ({checked: false});
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState({checked: false})
+  componentWillReceiveProps (newProps) {
+    this.setState ({checked: false});
   }
 
-  render() {
+  render () {
     return (
       <header className="header">
         <Link className="logo" to="/">
-          <h1 className="logo-text">VogelVrij</h1>
+          <div className="logo-text">
+            <h1>VogelVrij</h1><h4>Handmade Customised Fine Jewelry  </h4>
+          </div>
         </Link>
         <div className="menu-div" role="navigation">
           <div id="menuToggle">
             {/* <input type="checkbox" checked/> */}
-            <input type="checkbox" checked={this.state.checked} onClick={() => this.setState({checked: !this.state.checked})}/>
+            <input
+              type="checkbox"
+              checked={this.state.checked}
+              onClick={() => this.setState ({checked: !this.state.checked})}
+            />
             <span />
             <span />
             <span />

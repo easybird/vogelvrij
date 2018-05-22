@@ -30,8 +30,8 @@ class Header extends Component {
             <span />
             <span />
             <ul id="menu">
-              <Link to="/over">
-                <li>Over</li>
+              <Link to="/mijn-verhaal">
+                <li>Mijn verhaal</li>
               </Link>
               <Link to="/collectie">
                 <li>Collectie</li>

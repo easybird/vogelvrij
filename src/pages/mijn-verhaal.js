@@ -2,7 +2,7 @@ import React from 'react';
 import './basic.css';
 import { Photo } from '../components/PhotoGallery';
 
-const Over = ({ data: { allContentfulPage: { edges } } }) => (
+const MijnVerhaal = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
     {edges.map(({ node: { intro, description, hero } }) => [
       <div>
@@ -32,11 +32,11 @@ const Over = ({ data: { allContentfulPage: { edges } } }) => (
   </div>
 );
 
-export default Over;
+export default MijnVerhaal;
 
 export const query = graphql`
-  query OverQuery {
-    allContentfulPage(filter: { url: { eq: "over" } }) {
+  query MijnVerhaalQuery {
+    allContentfulPage(filter: { url: { eq: "mijn-verhaal" } }) {
       edges {
         node {
           id

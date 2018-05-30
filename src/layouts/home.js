@@ -34,7 +34,7 @@ export const query = graphql`
         node {
           hero {
             title
-            sizes(maxWidth: 1400) {
+            sizes(maxWidth: 1800, quality: 90) {
               ...GatsbyContentfulSizes_withWebp
             }
             resolutions {

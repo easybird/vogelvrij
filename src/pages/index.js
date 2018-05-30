@@ -46,7 +46,7 @@ export const query = graphql`
           }
           hero {
             title
-            sizes(maxWidth: 300) {
+            sizes(maxWidth: 1800, quality: 90) {
               ...GatsbyContentfulSizes_withWebp
             }
             resolutions {

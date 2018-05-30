@@ -36,12 +36,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    margin-top: -300px;
+    margin-top: -8em;
 }
 
 @media screen and (max-width: 1500px) and (min-width: 1025px) { /* Specific to this particular image */
   .background-image-wrapper {
-    margin-top: -100px;   /* 50% */
+    margin-top: -4.5em;   /* 50% */
   }
 }
 

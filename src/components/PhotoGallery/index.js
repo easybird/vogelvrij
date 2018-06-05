@@ -3,8 +3,8 @@ import galleryStyle from './gallery.css';
 import Img from 'gatsby-image';
 
 let ZMage = null;
-const PhotoGallery = ({children}) => (
-  <section className="gallerySection">{children}</section>
+const PhotoGallery = ({children, className}) => (
+  <section className={`gallerySection ${className}`}>{children}</section>
 );
 
 if (typeof window !== `undefined`) {

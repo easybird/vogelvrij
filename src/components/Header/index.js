@@ -21,9 +21,13 @@ class Header extends Component {
       <header className="header">
         <Link className="logo" to="/">
           <div className="logo-text">
-            <h1>VogelVrij</h1><h4>Handmade Customised Fine Jewelry  </h4>
+            <h1>VogelVrij</h1>
+            <h4>Handmade</h4>
+            <h4>Customised </h4>
+            <h4>Fine Jewelry </h4>
           </div>
         </Link>
+
         <div className="menu-div" role="navigation">
           <div id="menuToggle">
             {/* <input type="checkbox" checked/> */}

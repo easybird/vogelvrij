@@ -27,10 +27,8 @@ class Header extends Component {
             <h4>Fine Jewelry </h4>
           </div>
         </Link>
-
         <div className="menu-div" role="navigation">
           <div id="menuToggle">
-            {/* <input type="checkbox" checked/> */}
             <input
               type="checkbox"
               checked={this.state.checked}

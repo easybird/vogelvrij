@@ -1,15 +1,23 @@
 import React from 'react';
-import PhotoGallery, { Photo } from '../components/PhotoGallery';
+import PhotoGallery, {Photo} from '../components/PhotoGallery';
 
-const Collectie = ({ data: { allContentfulImage: { edges } } }) => (
-  <PhotoGallery>
-    {edges
-    .filter(({ node: { order } }) => order)
-    .map(({ node: { title, photo: { sizes, resolutions } } }) => (
-      <Photo title={title} sizes={sizes} resolutions={resolutions} zoom/>
-    ))}
-  </PhotoGallery>
-);
+const Collectie = ({data: {allContentfulImage: {edges}}}) => {
+  const orderedNodes = edges.filter (({node: {order}}) => order);
+  return (
+    <PhotoGallery
+      photoSet={orderedNodes.map (
+        ({node: {title, isSmall, photo: {sizes, resolutions}}}, index) => ({
+          index,
+          isSmall,
+          title,
+          sizes,
+          resolutions,
+        })
+      )}
+    >
+    </PhotoGallery>
+  );
+};
 
 export default Collectie;
 
@@ -21,8 +29,9 @@ export const query = graphql`
           id
           title
           order
+          isSmall
           photo {
-            sizes(maxWidth: 600) {
+            sizes(maxWidth: 620) {
               ...GatsbyContentfulSizes_withWebp
             }
             resolutions(width: 1200) {

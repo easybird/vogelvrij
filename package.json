@@ -16,7 +16,7 @@
     "gatsby-transformer-remark": "^1.7.33",
     "gatsby-transformer-sharp": "^1.6.19",
     "radium": "^0.24.0",
-    "react-cover-carousel": "0.0.1",
+    "react-cover-carousel": "0.0.2",
     "react-coverflow": "^0.2.14",
     "react-helmet": "^5.2.0",
     "react-modal": "^3.4.5",

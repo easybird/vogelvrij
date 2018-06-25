@@ -3,17 +3,8 @@ import galleryStyle from './gallery.css';
 import Img from 'gatsby-image';
 import {StyleRoot} from 'radium';
 import chunkArray from '../../utils/chunkArray';
-
-let ZMage = null;
-let Coverflow = null;
-// const PhotoGallery = ({className, photoSet}) => (
-//   <section className={`gallerySection ${className}`}>{children}</section>
-// );
-
-if (typeof window !== `undefined`) {
-  ZMage = require ('react-zmage').default;
-  Coverflow = require ('react-coverflow').default;
-}
+import ReactModal from 'react-modal';
+import { ReactCoverCarousel} from 'react-cover-carousel'
 
 class PhotoGallery extends React.Component {
   state = {
@@ -90,52 +81,61 @@ class PhotoGallery extends React.Component {
     const bigPhotos = photoSet.map (({index, title, sizes, resolutions}) => (
       <a onClick={() => this.showCover (index)}>
         <Photo
+          className="cover-photo"
           key={resolutions.index}
           title={title}
           sizes={sizes}
           resolutions={resolutions}
-          zoom
         />
       </a>
     ));
 
-    const coverFlow =
-      typeof this.state.showCover === 'number' &&
+    const coverCarousel = (
       <StyleRoot>
-        <Coverflow
-          displayQuantityOfSide={2}
-          navigation
-          infiniteScroll
-          enableHeading={false}
-          enableScroll={false}
-          active={this.state.showCover}
-          media={{
+        <ReactCoverCarousel
+          mediaQueries={{
             backgroundColor: 'white',
-            position: 'fixed',
-            top: '50%',
-            left: '50%',
-            width: '100vw',
             height: '100vh',
-            transform: 'translate(-50%, -50%)',
-            // '@media (max-width: 900px)': {
-            //   width: '600px',
-            //   height: '300px',
-            // },
-            // '@media (min-width: 900px)': {
-            //   width: '960px',
-            //   height: '600px',
-            // },
           }}
+          displayQuantityOfSide={2}
+          activeImageStyle={{
+            margin: '15%',
+          }}
+          infiniteScroll={true}
+          navigation={false}
+          enableHeading={false}
+          activeImageIndex={this.state.showCover}
+          otherFigureRotation={0}
+          currentFigureScale={2.3}
+          otherFigureScale={0.9}
         >
           {bigPhotos}
-        </Coverflow>
-      </StyleRoot>;
+        </ReactCoverCarousel>
+      </StyleRoot>
+    );
 
     return [
       <section className={`gallerySection ${className}`}>
         {this.groupPhotos (photoSet)}
       </section>,
-      coverFlow,
+      <ReactModal
+        style={{
+          overlay: {zIndex: 1001},
+          content: {top: 0, left: 0, right: 0, bottom: 0, padding: 0},
+        }}
+        isOpen={typeof this.state.showCover === 'number'}
+        contentLabel="Juwelry portfolio"
+      >
+        {coverCarousel}
+        <div className='close-button-container'><div className='modal-close'>
+            <input
+              type="checkbox"
+              onClick={() => this.setState ({showCover: null})}
+            />
+            <span />
+            <span />
+        </div></div>
+      </ReactModal>,
     ];
   }
 }
@@ -190,27 +190,13 @@ export const Photo = ({
     <Img
       key={title}
       alt={title}
-      title={title}
       sizes={sizes}
       resolutions={resolutions}
       style={style}
       outerWrapperClassName="gallery"
       fadeIn
       className={className || 'image '}
-      onClick={() => alert ('wut!')}
     />
-    {/* {zoom &&
-      ZMage &&
-      resolutions &&
-      <ZMage
-        style={{opacity: 0, position: 'absolute', top: 0, left: 0}}
-        src={resolutions.src}
-        show={true}
-        zoom={true}
-        set={set}
-        toggleZoom={true}
-      />} */}
-
     {overlay && <div className="image-overlay" />}
   </div>
 );

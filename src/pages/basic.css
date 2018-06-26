@@ -5,8 +5,19 @@
   max-width: 1000px;
 }
 
+.hero-container {
+  align-self: center;
+  flex: 1;
+}
+
 .one-column {
   flex-direction: column;
+}
+
+.text-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }
 
 /* landscape tablets and bigger */
@@ -16,6 +27,7 @@
     max-width: 1000px;
     margin: auto;
     justify-content: space-between;
+    align-items: center;
   }
 }
 

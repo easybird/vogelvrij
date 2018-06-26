@@ -5,7 +5,7 @@ import { Photo } from '../components/PhotoGallery';
 const MijnVerhaal = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
     {edges.map(({ node: { intro, description, hero } }) => [
-      <div>
+      <div className="text-container">
         {intro && (
           <div
             className="page"
@@ -24,7 +24,7 @@ const MijnVerhaal = ({ data: { allContentfulPage: { edges } } }) => (
         )}
       </div>,
       hero && (
-        <div style={{alignSelf: 'center'}}>
+        <div className="hero-container">
           <Photo title={hero.title} sizes={hero.sizes} className="contact-image" />
         </div>
       ),

@@ -7,11 +7,11 @@ const Contact = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
     {edges.map(({ node: { intro, description, hero } }) => [
       hero && (
-        <div>
+        <div className='hero-container'>
           <Photo title={hero.title} sizes={hero.sizes} className="contact-image" />
         </div>
       ),
-      <div>
+      <div className='text-container'>
         {intro && (
           <div
             className="page"

@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import {StyleRoot} from 'radium';
 import chunkArray from '../../utils/chunkArray';
 import ReactModal from 'react-modal';
-import { ReactCoverCarousel} from 'react-cover-carousel'
+import { ReactCoverCarousel } from 'react-cover-carousel'
 
 class PhotoGallery extends React.Component {
   state = {
@@ -106,8 +106,9 @@ class PhotoGallery extends React.Component {
           enableHeading={false}
           activeImageIndex={this.state.showCover}
           otherFigureRotation={0}
-          currentFigureScale={2.3}
+          activeFigureScale={2.3}
           otherFigureScale={0.9}
+          autoFocus
         >
           {bigPhotos}
         </ReactCoverCarousel>

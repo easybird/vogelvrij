@@ -5,6 +5,12 @@ import { Photo } from '../components/PhotoGallery';
 const MijnVerhaal = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
     {edges.map(({ node: { intro, description, hero } }) => [
+      
+      hero && (
+        <div className="hero-container">
+          <Photo title={hero.title} sizes={hero.sizes} className="contact-image" />
+        </div>
+      ),
       <div className="text-container">
         {intro && (
           <div
@@ -23,11 +29,6 @@ const MijnVerhaal = ({ data: { allContentfulPage: { edges } } }) => (
           />
         )}
       </div>,
-      hero && (
-        <div className="hero-container">
-          <Photo title={hero.title} sizes={hero.sizes} className="contact-image" />
-        </div>
-      ),
     ])}
   </div>
 );

@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import {StyleRoot} from 'radium';
 import chunkArray from '../../utils/chunkArray';
 import ReactModal from 'react-modal';
-import { ReactCoverCarousel } from 'react-cover-carousel'
+import ReactCoverCarousel from 'react-cover-carousel'
 
 class PhotoGallery extends React.Component {
   state = {
@@ -79,7 +79,6 @@ class PhotoGallery extends React.Component {
   render () {
     const {photoSet, className} = this.props;
     const bigPhotos = photoSet.map (({index, title, sizes, resolutions}) => (
-      <a onClick={() => this.showCover (index)}>
         <Photo
           className="cover-photo"
           key={resolutions.index}
@@ -87,7 +86,6 @@ class PhotoGallery extends React.Component {
           sizes={sizes}
           resolutions={resolutions}
         />
-      </a>
     ));
 
     const coverCarousel = (

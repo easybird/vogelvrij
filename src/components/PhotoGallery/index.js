@@ -4,7 +4,13 @@ import Img from 'gatsby-image';
 import {StyleRoot} from 'radium';
 import chunkArray from '../../utils/chunkArray';
 import ReactModal from 'react-modal';
-import ReactCoverCarousel from 'react-cover-carousel'
+
+ReactModal.setAppElement ('body');
+
+let ReactCoverCarousel;
+if (typeof window !== 'undefined') {
+  ReactCoverCarousel = require('react-cover-carousel').default;
+}
 
 class PhotoGallery extends React.Component {
   state = {
@@ -88,7 +94,7 @@ class PhotoGallery extends React.Component {
         />
     ));
 
-    const coverCarousel = (
+    const coverCarousel = typeof window !== 'undefined' ? (
       <StyleRoot>
         <ReactCoverCarousel
           mediaQueries={{
@@ -111,7 +117,7 @@ class PhotoGallery extends React.Component {
           {bigPhotos}
         </ReactCoverCarousel>
       </StyleRoot>
-    );
+    ) : null;
 
     return [
       <section className={`gallerySection ${className}`}>
@@ -142,7 +148,7 @@ class PhotoGallery extends React.Component {
 export const PhotoPair = ({photoPair, showCover}) => (
   <div className="photo-pair">
     {photoPair.map (({id, title, sizes, resolutions}, index) => (
-      <a onClick={() => showCover (id)}>
+      <a key={id} onClick={() => showCover (id)}>
         <Photo
           className="image"
           key={id}

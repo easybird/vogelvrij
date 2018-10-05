@@ -8,5 +8,5 @@ export default {
     },
     { name: 'keywords', content: 'juwelen, juwelry' },
     { name: 'google-site-verification', content: 'UnzsU2I7fX_birO_vw86eHv9AkT2lgMQ-4um0Ozt1MY'}
-  ],
+  ],  
 };

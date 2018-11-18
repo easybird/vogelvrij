@@ -1,11 +1,15 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import './basic.css';
 import { Photo } from '../components/PhotoGallery';
 
 const MijnVerhaal = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
+    [<Helmet key="helmet">
+      <title>VogelVrij, als in puur, natuurlijk & vol passie</title>
+    </Helmet>,
     {edges.map(({ node: { intro, description, hero } }) => [
-      
+
       hero && (
         <div className="hero-container">
           <Photo title={hero.title} sizes={hero.sizes} className="contact-image" />
@@ -29,7 +33,7 @@ const MijnVerhaal = ({ data: { allContentfulPage: { edges } } }) => (
           />
         )}
       </div>,
-    ])}
+    ])}]
   </div>
 );
 

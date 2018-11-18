@@ -1,8 +1,10 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import './home.css';
 
 const IndexPage = ({data: {allContentfulPage: {edges}}}) => (
   <content className="content">
+    [<Helmet><title>VogelVrij - juwelen op maat om te koesteren</title></Helmet>,
     {edges.map (({node: {intro, description}}) => [
       intro &&
         <div
@@ -21,7 +23,7 @@ const IndexPage = ({data: {allContentfulPage: {edges}}}) => (
               description.childMarkdownRemark.html,
           }}
         />,
-    ])}
+    ])}]
   </content>
 );
 

@@ -1,9 +1,13 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import './basic.css';
 import {Photo} from '../components/PhotoGallery';
 
 const Maatwerk = ({data: {allContentfulMaatwerk}}) => (
   <div className="basic-container">
+    <Helmet key="helmet">
+      <title>VogelVrij, persoonsgebonden en waardevolle juwelen</title>
+    </Helmet>
     <div>
       {allContentfulMaatwerk.edges.map (
         ({node: {description, hero, url}}) => (

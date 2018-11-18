@@ -1,11 +1,16 @@
 import React from 'react';
-import PhotoGallery, {Photo} from '../components/PhotoGallery';
+import {Helmet} from 'react-helmet';
+import PhotoGallery from '../components/PhotoGallery';
 
 const Collectie = ({data: {allContentfulImage: {edges}}}) => {
-  const orderedNodes = edges.filter (({node: {order}}) => order);
-  return (
+  const orderedNodes = edges.filter(({node: {order}}) => order);
+  return [
+    <Helmet key="helmet">
+      <title>Laat je inspireren door de ontwerpen van VogelVrij</title>
+    </Helmet>,
     <PhotoGallery
-      photoSet={orderedNodes.map (
+      key="photoGallery"
+      photoSet={orderedNodes.map(
         ({node: {title, isSmall, photo: {sizes, resolutions}}}, index) => ({
           index,
           isSmall,
@@ -14,9 +19,8 @@ const Collectie = ({data: {allContentfulImage: {edges}}}) => {
           resolutions,
         })
       )}
-    >
-    </PhotoGallery>
-  );
+    />,
+  ];
 };
 
 export default Collectie;

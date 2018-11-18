@@ -1,10 +1,12 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import './basic.css';
 import './contact.css';
 import { Photo } from '../components/PhotoGallery';
 
 const Contact = ({ data: { allContentfulPage: { edges } } }) => (
   <div className="basic-container">
+    <Helmet><title>VogelVrij - Maak een afspraak voor een persoonlijk ontwerp</title></Helmet>
     {edges.map(({ node: { intro, description, hero } }) => [
       hero && (
         <div className='hero-container'>

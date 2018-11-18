@@ -5,6 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Vogelvrij',
+    siteUrl: 'https://vogelvrij.be'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -19,6 +20,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     'gatsby-transformer-remark',
     'gatsby-plugin-react-next',
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

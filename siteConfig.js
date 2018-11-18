@@ -4,9 +4,9 @@ export default {
     {
       name: 'description',
       content:
-        'In mijn ogen is een juweel is niet zomaar wat opsmuk. Het is een persoonlijk sieraad, iets wat bij jou als persoon past, met een betekenis. Je koopt het bij een gebeurtenis, een mijlpaal in je leven, … Je koopt het voor jezelf, of voor een dierbaar iemand.',
+        'Handgemaakte juwelen op maat, met liefde gemaakt vanuit Gent. Als geschenk voor jezelf, maatwerk voor je huwelijk, je verloving, of zomaar, voor een dierbaar iemand. Wil je oud goud recupereren? Dat kan ook.',
     },
-    { name: 'keywords', content: 'juwelen, juwelry' },
+    { name: 'keywords', content: 'juwelen, juwelry, gent, ghent, huwelijk, trouwen, verloofd' },
     { name: 'google-site-verification', content: 'UnzsU2I7fX_birO_vw86eHv9AkT2lgMQ-4um0Ozt1MY'}
-  ],  
+  ],
 };

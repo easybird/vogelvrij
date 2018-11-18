@@ -14,5 +14,7 @@ export default {
       name: 'google-site-verification',
       content: 'UnzsU2I7fX_birO_vw86eHv9AkT2lgMQ-4um0Ozt1MY',
     },
-  ]
+    // pinterest
+    {name: 'p:domain_verify', content: '0b6960b7fafc881118f2cbd3c8cfd570'},
+  ],
 };

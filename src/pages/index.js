@@ -4,26 +4,31 @@ import './home.css';
 
 const IndexPage = ({data: {allContentfulPage: {edges}}}) => (
   <content className="content">
-    [<Helmet><title>VogelVrij - juwelen op maat om te koesteren</title></Helmet>,
-    {edges.map (({node: {intro, description}}) => [
-      intro &&
+    <Helmet>
+      <title>VogelVrij - juwelen op maat om te koesteren</title>
+    </Helmet>
+    {edges.map(({node: {intro, description}}) => [
+      intro && (
         <div
           key="intro"
           className="page limit-text-width"
           dangerouslySetInnerHTML={{
             __html: intro.childMarkdownRemark && intro.childMarkdownRemark.html,
           }}
-        />,
-      description &&
+        />
+      ),
+      description && (
         <div
           key="description"
           className="quotedBy limit-text-width"
           dangerouslySetInnerHTML={{
-            __html: description.childMarkdownRemark &&
+            __html:
+              description.childMarkdownRemark &&
               description.childMarkdownRemark.html,
           }}
-        />,
-    ])}]
+        />
+      ),
+    ])}
   </content>
 );
 
@@ -31,7 +36,7 @@ export default IndexPage;
 
 export const query = graphql`
   query HomePageQuery {
-    allContentfulPage(filter: { url: { eq: "home" } }) {
+    allContentfulPage(filter: {url: {eq: "home"}}) {
       edges {
         node {
           id

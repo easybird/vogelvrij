@@ -8,23 +8,27 @@ class Header extends Component {
     checked: false,
   };
 
-  componentWillMount () {
-    this.setState ({checked: false});
+  componentWillMount() {
+    this.setState({checked: false});
   }
 
-  componentWillReceiveProps (newProps) {
-    this.setState ({checked: false});
+  componentWillReceiveProps(newProps) {
+    this.setState({checked: false});
   }
 
-  render () {
+  render() {
     return (
       <header className="header">
         <Link className="logo" to="/">
           <div className="logo-text">
-            <h1>VogelVrij</h1>
-            <h4>Handmade</h4>
-            <h4>Customised </h4>
-            <h4>Fine Jewelry </h4>
+            <h1>
+              V<em className="upper-crazy-o">o</em>
+              <em className="lower-crazy-o">o</em>
+              <em className="invisible-o">o</em>gelVrij
+            </h1>
+            <h4>Handgemaakt</h4>
+            <h4>Op maat </h4>
+            <h4>Met Liefde & Ambacht </h4>
           </div>
         </Link>
         <div className="menu-div" role="navigation">
@@ -32,7 +36,7 @@ class Header extends Component {
             <input
               type="checkbox"
               checked={this.state.checked}
-              onClick={() => this.setState ({checked: !this.state.checked})}
+              onClick={() => this.setState({checked: !this.state.checked})}
             />
             <span />
             <span />

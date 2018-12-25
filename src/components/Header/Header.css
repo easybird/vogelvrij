@@ -41,6 +41,24 @@
     margin: 0;
 }
 
+.logo em {
+  font-style: normal;
+}
+
+.logo .invisible-o {
+  visibility: hidden;
+}
+
+.logo .lower-crazy-o {
+  transform: translate(1px, -3px);
+  position: absolute;
+}
+
+.logo .upper-crazy-o {
+  transform: translate(-1px, 3px);
+  position: absolute;
+}
+
 .menu-div {
   margin: 15px;
   padding: 15px;
@@ -66,7 +84,7 @@
     position: absolute;
     top: 0;
     right: 0;
-  } 
+  }
 }
 
 /* landscape tablets and bigger */

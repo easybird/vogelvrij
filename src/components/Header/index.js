@@ -26,9 +26,9 @@ class Header extends Component {
               <em className="lower-crazy-o">o</em>
               <em className="invisible-o">o</em>gelVrij
             </h1>
+            <h4>Juwelen</h4>
             <h4>Handgemaakt</h4>
             <h4>Op maat </h4>
-            <h4>Met Liefde & Ambacht </h4>
           </div>
         </Link>
         <div className="menu-div" role="navigation">

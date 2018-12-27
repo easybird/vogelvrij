@@ -37,8 +37,26 @@
 }
 
 .logo h4 {
-    text-align: center;
+    text-align: left;
     margin: 0;
+}
+
+.logo em {
+  font-style: normal;
+}
+
+.logo .invisible-o {
+  visibility: hidden;
+}
+
+.logo .lower-crazy-o {
+  transform: translate(1px, -3px);
+  position: absolute;
+}
+
+.logo .upper-crazy-o {
+  transform: translate(-1px, 3px);
+  position: absolute;
 }
 
 .menu-div {
@@ -66,7 +84,7 @@
     position: absolute;
     top: 0;
     right: 0;
-  } 
+  }
 }
 
 /* landscape tablets and bigger */

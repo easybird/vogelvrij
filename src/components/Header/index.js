@@ -44,6 +44,9 @@ class Header extends Component {
               <Link to="/collectie">
                 <li>Collectie</li>
               </Link>
+              <Link to="/juwelen">
+                <li>Hun Juweel</li>
+              </Link>
               <Link to="/mijn-verhaal">
                 <li>Mijn verhaal</li>
               </Link>

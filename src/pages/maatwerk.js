@@ -1,6 +1,7 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import './basic.css';
+import './maatwerk.css';
 import {Photo} from '../components/PhotoGallery';
 
 const Maatwerk = ({data: {allContentfulMaatwerk}}) => (
@@ -10,7 +11,7 @@ const Maatwerk = ({data: {allContentfulMaatwerk}}) => (
     </Helmet>
     <div>
       {allContentfulMaatwerk.edges.map (
-        ({node: {description, hero, url}}) => (
+        ({node: {description, hero, heroRight, url}}) => (
           <div id={url} key={url}>
             {description &&
               <div
@@ -21,8 +22,13 @@ const Maatwerk = ({data: {allContentfulMaatwerk}}) => (
                 }}
               />}
             {hero &&
-              <div>
+              <div className="maatwerk-hero-wrapper">
+              <div className="hero">
                 <Photo title={hero.title} sizes={hero.sizes} resolutions={hero.resolutions} style={{width: "100%"}}/>
+              </div>
+              {heroRight && <div className="hero">
+              <Photo title={heroRight.title} sizes={heroRight.sizes} resolutions={heroRight.resolutions} style={{width: "100%"}}/>
+              </div>}
               </div>}
           </div>
         )
@@ -47,6 +53,22 @@ export const query = graphql`
             }
           }
           hero {
+            title
+            sizes(maxWidth: 1000) {
+              ...GatsbyContentfulSizes_withWebp
+            }
+            resolutions {
+              base64
+              aspectRatio
+              width
+              height
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+            }
+          }
+          heroRight {
             title
             sizes(maxWidth: 1000) {
               ...GatsbyContentfulSizes_withWebp

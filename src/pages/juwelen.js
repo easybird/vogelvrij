@@ -14,7 +14,7 @@ const Juweel = ({juweelPhoto, story}) => (
         resolutions={juweelPhoto.resolutions}
       />
       </div>
-    <div className="juweel-text"><em
+    <div className="juweel-text"><p
     dangerouslySetInnerHTML={{
       __html: story.childMarkdownRemark && story.childMarkdownRemark.html,
     }}/></div>

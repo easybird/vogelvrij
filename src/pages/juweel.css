@@ -45,3 +45,13 @@
         width: 60vw!important;
     }
 }
+
+@media only screen and (max-width: 800px) {
+    .juweel-page  {
+        padding-top: 20px!important;
+        padding-bottom: 20px!important;
+    }
+    .juweel-page .juweel-container .photo-container {
+        margin-top: 0!important;
+    }
+}

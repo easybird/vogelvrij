@@ -1,34 +1,37 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import './home.css';
+import SocialMediaLinks from '../components/SocialMediaLinks';
 
 const IndexPage = ({data: {allContentfulPage: {edges}}}) => (
   <content className="content">
+
     <Helmet>
       <title>VogelVrij - juwelen op maat om te koesteren</title>
     </Helmet>
-    {edges.map(({node: {intro, description}}) => [
-      intro && (
+    {edges.map (({node: {intro, description}}) => [
+      intro &&
         <div
           key="intro"
           className="page limit-text-width"
           dangerouslySetInnerHTML={{
             __html: intro.childMarkdownRemark && intro.childMarkdownRemark.html,
           }}
-        />
-      ),
-      description && (
+        />,
+      description &&
         <div
           key="description"
           className="quotedBy limit-text-width"
           dangerouslySetInnerHTML={{
-            __html:
-              description.childMarkdownRemark &&
+            __html: description.childMarkdownRemark &&
               description.childMarkdownRemark.html,
           }}
-        />
-      ),
+        />,
     ])}
+    <div className="social-media">
+      <SocialMediaLinks isWeb />
+    </div>
+
   </content>
 );
 

@@ -1,10 +1,10 @@
+import './css/index.css';
+import './css/custom-index.css';
+import './css/home.css';
 import React from 'react';
 import Head from '../components/Head';
 import Header from '../components/Header';
 import { Photo } from '../components/PhotoGallery';
-import './css/index.css';
-import './css/custom-index.css';
-import './css/home.css';
 
 const HomePageLayout = ({ children, data: { allContentfulPage: { edges } } }) => (
   <div className="layout">

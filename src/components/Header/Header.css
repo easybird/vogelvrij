@@ -74,6 +74,16 @@
     text-decoration: inherit;
 }
 
+.social-media-header {
+  display: none;
+}
+
+@media (max-width:557px) {
+  .social-media-header {
+    display: block;
+  }
+}
+
 /* smaller than landscape tablets */
 @media (max-width:1033px) {
   .logo {
@@ -103,6 +113,7 @@
 
   .menu-div {
     flex: 4;
+    padding: 0;
     margin-left: 0;
     margin-right: 0;
     margin: auto;

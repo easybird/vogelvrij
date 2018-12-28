@@ -1,7 +1,8 @@
-import Link from 'gatsby-link';
-import React, {Component} from 'react';
 import './Header.css';
 import './nav.css';
+import Link from 'gatsby-link';
+import React, {Component} from 'react';
+import SocialMediaLinks from '../SocialMediaLinks';
 
 class Header extends Component {
   state = {
@@ -45,18 +46,21 @@ class Header extends Component {
               <Link to="/maatwerk">
                 <li>Maatwerk</li>
               </Link>
+              <Link to="/mijn-verhaal">
+                <li>Mijn Verhaal</li>
+              </Link>
               <Link to="/collectie">
                 <li>Collectie</li>
               </Link>
               <Link to="/juwelen">
                 <li>Hun Juweel</li>
               </Link>
-              <Link to="/mijn-verhaal">
-                <li>Mijn verhaal</li>
-              </Link>
               <Link to="/contact">
                 <li>Contact</li>
               </Link>
+              <div className="social-media-header">
+                <SocialMediaLinks />
+              </div>
             </ul>
           </div>
         </div>

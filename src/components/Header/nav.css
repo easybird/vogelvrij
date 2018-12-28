@@ -1,8 +1,20 @@
 
+ul {
+  margin-left: 1em;
+}
+
 #menu li
 {
-  padding: 10px 0;
+  padding: 10px;
   font-size: 150%;
+}
+
+#menu li:first-child {
+  padding-left:0
+}
+
+#menu li:last-child {
+  padding-right: 0
 }
 
 a:hover {
@@ -110,7 +122,7 @@ a:hover {
     position: absolute;
     width: 101vw;
     height: 100vh;
-    margin-left: calc(-100vw + 66px);
+    margin-left: calc(-101vw + 66px);
     margin-top: -57px;
     display: flex;
     flex-direction: column;
@@ -157,12 +169,13 @@ a:hover {
   }
 
   #menu li {
-    font-size: 120%;
+    font-size: 105%;
   }
+
 }
 
-@media (min-width: 1050px) {
+@media (min-width: 1250px) {
   #menu li {
-    font-size: 150%;
+    font-size: 125%;
   }
 }

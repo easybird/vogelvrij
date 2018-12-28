@@ -16,7 +16,7 @@
 }
 
 .limit-text-width {
-  width: 65%;  
+  width: 65%;
 }
 
 .quotedBy {
@@ -26,10 +26,20 @@
   display: block;
 }
 
+.social-media {
+  visibility: hidden;
+  position: fixed;
+  bottom: 1em;
+  right: 1.5em;
+}
+
 /* portrait tablets and bigger */
 @media (min-width:557px) {
   .limit-text-width {
     width: 50%;
+  }
+  .social-media {
+    visibility: visible
   }
 }
 

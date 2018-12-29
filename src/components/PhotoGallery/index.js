@@ -187,9 +187,7 @@ export const Photo = ({
   resolutions,
   className,
   zoom,
-  set,
   overlay,
-  fullSize,
 }) => (
   <div className={zoom && 'photo-zoom'}>
     <Img

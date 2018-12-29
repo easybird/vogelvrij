@@ -7,17 +7,20 @@ import Zoom from 'react-reveal';
 
 const Juweel = ({juweelPhoto, story}) => (
   <div className="juweel-container">
-      <div className="photo-container"><Photo
+    <div className="photo-container">
+      <Photo
         className="photo"
         title={juweelPhoto.title}
         sizes={juweelPhoto.sizes}
         resolutions={juweelPhoto.resolutions}
       />
-      </div>
-    <div className="juweel-text"><p
-    dangerouslySetInnerHTML={{
-      __html: story.childMarkdownRemark && story.childMarkdownRemark.html,
-    }}/></div>
+    </div>
+    <div
+      className="juweel-text"
+      dangerouslySetInnerHTML={{
+        __html: story.childMarkdownRemark && story.childMarkdownRemark.html,
+      }}
+    />
   </div>
 );
 
@@ -27,11 +30,15 @@ const Juwelen = ({data: {allContentfulHunJuweel}}) => (
       <title>VogelVrij, persoonsgebonden juwelen</title>
     </Helmet>
     <div>
-      {allContentfulHunJuweel.edges.map (({node: {story, juweelPhoto, order}}) => (
-        <div className="juweel-page" id={order} key={order}>
-          <Zoom bottom><Juweel juweelPhoto={juweelPhoto} story={story}/></Zoom>
-        </div>
-      ))}
+      {allContentfulHunJuweel.edges.map (
+        ({node: {story, juweelPhoto, order}}) => (
+          <div className="juweel-page" id={order} key={order}>
+            <Zoom bottom>
+              <Juweel juweelPhoto={juweelPhoto} story={story} />
+            </Zoom>
+          </div>
+        )
+      )}
 
     </div>
   </div>

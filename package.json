@@ -31,6 +31,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
+    "fast-deploy": "npm run build && npx surge $(pwd)/public",
     "develop": "cross-env NODE_ENV=development gatsby develop -H 0.0.0.0",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"

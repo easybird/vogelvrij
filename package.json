@@ -15,7 +15,7 @@
     "gatsby-plugin-sharp": "^1.6.34",
     "gatsby-plugin-sitemap": "^1.2.14",
     "gatsby-source-contentful": "^1.3.38",
-    "gatsby-transformer-remark": "^1.7.33",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^1.6.19",
     "radium": "^0.24.0",
     "react-cover-carousel": "0.0.5",
